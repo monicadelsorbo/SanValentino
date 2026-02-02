@@ -39,23 +39,7 @@ function createHeart() {
   }, 4000);
 }
 
-function createKiss() {
-  const kiss = document.createElement('img');
-  kiss.src = 'https://example.com/kiss.png';  // metti qui il link dell'immagine PNG
-  kiss.style.position = 'fixed';
-  kiss.style.width = '30px';  // regola la dimensione come vuoi
-  kiss.style.height = 'auto';
-  kiss.style.left = Math.random() * (window.innerWidth - 30) + 'px';
-  kiss.style.top = Math.random() * (window.innerHeight - 30) + 'px';
-  kiss.style.opacity = '0.8';
-  kiss.style.pointerEvents = 'none';
-  document.body.appendChild(kiss);
-
-  setTimeout(() => {
-    kiss.remove();
-  }, 2000);
-}
 
 setInterval(createHeart, 700);
-setInterval(createKiss, 1500);
+
 
