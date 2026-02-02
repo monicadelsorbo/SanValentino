@@ -15,12 +15,12 @@ function moveNoButton() {
 
 noBtn.addEventListener('mouseenter', moveNoButton);
 noBtn.addEventListener('touchstart', (e) => {
-  e.preventDefault(); // evita che il click venga registrato subito
+  e.preventDefault();
   moveNoButton();
 });
 
 yesBtn.addEventListener('click', () => {
-  message.textContent = 'Evvaii, hai preso la decisione migliore!';
+  message.textContent = 'Evvaii, miglior decisione che hai preso!';
   gifContainer.innerHTML = '<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Festeggiamenti" />';
   yesBtn.disabled = true;
   noBtn.remove();
@@ -39,7 +39,4 @@ function createHeart() {
   }, 4000);
 }
 
-
 setInterval(createHeart, 700);
-
-
