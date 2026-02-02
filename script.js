@@ -39,12 +39,12 @@ function createHeart() {
   }, 4000);
 }
 
-// Funzione per creare baci come emoji 💋 che appaiono e scompaiono
 function createKiss() {
-  const kiss = document.createElement('div');
-  kiss.textContent = '💋';
+  const kiss = document.createElement('img');
+  kiss.src = 'https://example.com/kiss.png';  // metti qui il link dell'immagine PNG
   kiss.style.position = 'fixed';
-  kiss.style.fontSize = '28px';
+  kiss.style.width = '30px';  // regola la dimensione come vuoi
+  kiss.style.height = 'auto';
   kiss.style.left = Math.random() * (window.innerWidth - 30) + 'px';
   kiss.style.top = Math.random() * (window.innerHeight - 30) + 'px';
   kiss.style.opacity = '0.8';
@@ -58,3 +58,4 @@ function createKiss() {
 
 setInterval(createHeart, 700);
 setInterval(createKiss, 1500);
+
