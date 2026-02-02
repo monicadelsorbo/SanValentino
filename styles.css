@@ -1,0 +1,128 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  padding: 50px;
+  background: #ffccd9; /* rosa chiaro */
+  overflow-x: hidden; /* evita scroll orizzontale per animazioni */
+  position: relative;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+  color: #cc0000; /* rosso vivo */
+  text-shadow: 2px 2px 5px rgba(204, 0, 0, 0.6);
+  margin-bottom: 60px;
+}
+
+.buttons {
+  margin-top: 40px;
+}
+
+button {
+  font-size: 1.3em;
+  padding: 15px 40px;
+  margin: 0 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+}
+
+button#yes {
+  background-color: #e60000;
+  color: white;
+}
+
+button#yes:hover {
+  background-color: #b30000;
+  transform: scale(1.1);
+}
+
+button#no {
+  background-color: #999999;
+  color: white;
+  position: relative;
+}
+
+#message {
+  margin-top: 50px;
+  font-size: 2em;
+  color: #cc0000;
+  font-weight: bold;
+}
+
+#gif-container {
+  margin-top: 30px;
+}
+
+img {
+  max-width: 300px;
+  border-radius: 20px;
+}
+
+/* Cuoricini */
+.heart {
+  position: fixed;
+  width: 20px;
+  height: 18px;
+  background: #e60000;
+  transform: rotate(-45deg);
+  animation: rise 4s linear forwards;
+  opacity: 0.8;
+  z-index: 1000;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 18px;
+  background: #e60000;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: 10px;
+  top: 0;
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(0) rotate(-45deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-150vh) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+/* Baci */
+.kiss {
+  position: fixed;
+  width: 30px;
+  height: 25px;
+  background: #ff3366;
+  clip-path: polygon(30% 0%, 70% 0%, 100% 40%, 70% 100%, 30% 100%, 0 40%);
+  opacity: 0.9;
+  animation: fadeOut 3s forwards;
+  z-index: 1000;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+  }
+}
