@@ -106,17 +106,7 @@ img {
   }
 }
 
-/* Baci */
-.kiss {
-  position: fixed;
-  width: 30px;
-  height: 25px;
-  background: #ff3366;
-  clip-path: polygon(30% 0%, 70% 0%, 100% 40%, 70% 100%, 30% 100%, 0 40%);
-  opacity: 0.9;
-  animation: fadeOut 3s forwards;
-  z-index: 1000;
-}
+
 
 @keyframes fadeOut {
   0% {
@@ -135,3 +125,4 @@ img {
     margin: 10px 10px;
   }
 }
+
