@@ -3,16 +3,24 @@ const yesBtn = document.getElementById('yes');
 const message = document.getElementById('message');
 const gifContainer = document.getElementById('gif-container');
 
-noBtn.addEventListener('mouseenter', () => {
-  const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
-  const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+function moveNoButton() {
+  const maxX = window.innerWidth - noBtn.offsetWidth - 10;
+  const maxY = window.innerHeight - noBtn.offsetHeight - 10;
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
   noBtn.style.position = 'absolute';
   noBtn.style.left = `${x}px`;
   noBtn.style.top = `${y}px`;
+}
+
+noBtn.addEventListener('mouseenter', moveNoButton);
+noBtn.addEventListener('touchstart', (e) => {
+  e.preventDefault(); // evita che il click venga registrato subito
+  moveNoButton();
 });
 
 yesBtn.addEventListener('click', () => {
-  message.textContent = 'Hai preso la decisione migliore!';
+  message.textContent = 'Evvaii, hai preso la decisione migliore!';
   gifContainer.innerHTML = '<img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Festeggiamenti" />';
   yesBtn.disabled = true;
   noBtn.remove();
@@ -31,17 +39,21 @@ function createHeart() {
   }, 4000);
 }
 
-// Funzione per creare baci che appaiono e scompaiono
+// Funzione per creare baci come emoji 💋 che appaiono e scompaiono
 function createKiss() {
   const kiss = document.createElement('div');
-  kiss.classList.add('kiss');
-  kiss.style.left = Math.random() * window.innerWidth + 'px';
-  kiss.style.top = Math.random() * window.innerHeight + 'px';
+  kiss.textContent = '💋';
+  kiss.style.position = 'fixed';
+  kiss.style.fontSize = '28px';
+  kiss.style.left = Math.random() * (window.innerWidth - 30) + 'px';
+  kiss.style.top = Math.random() * (window.innerHeight - 30) + 'px';
+  kiss.style.opacity = '0.8';
+  kiss.style.pointerEvents = 'none';
   document.body.appendChild(kiss);
 
   setTimeout(() => {
     kiss.remove();
-  }, 3000);
+  }, 2000);
 }
 
 setInterval(createHeart, 700);
